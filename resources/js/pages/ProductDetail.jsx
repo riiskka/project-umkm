@@ -4,6 +4,7 @@ import { api } from '../api'
 import { useCart } from '../context/CartContext'
 import { formatRupiah } from '../components/ProductCard'
 import ProductImage from '../components/ProductImage'
+import QuantityStepper from '../components/QuantityStepper'
 
 export default function ProductDetail() {
     const { id } = useParams()
@@ -71,14 +72,7 @@ export default function ProductDetail() {
 
                     {product.stock > 0 ? (
                         <form onSubmit={handleAdd} className="mt-5 flex items-center gap-3">
-                            <input
-                                type="number"
-                                min={1}
-                                max={product.stock}
-                                value={qty}
-                                onChange={(e) => setQty(Number(e.target.value))}
-                                className="w-20 border border-stone-300 rounded-md px-2 py-1.5 text-sm"
-                            />
+                            <QuantityStepper value={qty} max={product.stock} onChange={setQty} />
                             <button className="bg-stone-900 text-amber-50 px-5 py-2 rounded-md text-sm font-medium hover:bg-stone-800">
                                 + Tambah ke Keranjang
                             </button>
