@@ -5,6 +5,7 @@ import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
 import { formatRupiah } from '../components/ProductCard'
 import ProductImage from '../components/ProductImage'
+import QuantityStepper from '../components/QuantityStepper'
 
 export default function Cart() {
     const { cart, updateItem, removeItem } = useCart()
@@ -46,6 +47,7 @@ export default function Cart() {
 
             {items.length === 0 ? (
                 <div className="text-center py-16">
+                    <div className="text-5xl mb-3">🛒</div>
                     <p className="text-stone-500">Keranjangmu masih kosong.</p>
                     <Link to="/" className="inline-block mt-4 bg-stone-900 text-amber-50 px-5 py-2 rounded-md text-sm">
                         Mulai Belanja
@@ -67,13 +69,11 @@ export default function Cart() {
                                     <p className="text-sm text-stone-500">{formatRupiah(item.product.price)}</p>
                                 </div>
 
-                                <input
-                                    type="number"
-                                    min={1}
-                                    max={item.product.stock}
+                                <QuantityStepper
                                     value={item.quantity}
-                                    onChange={(e) => updateItem(item.product.id, Number(e.target.value), item.product.stock)}
-                                    className="w-16 border border-stone-300 rounded-md px-2 py-1 text-sm"
+                                    max={item.product.stock}
+                                    size="sm"
+                                    onChange={(qty) => updateItem(item.product.id, qty, item.product.stock)}
                                 />
 
                                 <p className="font-semibold text-sm w-24 text-right shrink-0">{formatRupiah(item.subtotal)}</p>
