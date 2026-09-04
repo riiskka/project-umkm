@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { api } from '../api'
 import { useCart } from '../context/CartContext'
 import { formatRupiah } from '../components/ProductCard'
+import ProductImage from '../components/ProductImage'
 
 const METHODS = ['Transfer Bank', 'E-Wallet', 'COD']
 
@@ -74,7 +75,9 @@ export default function Checkout() {
                 <div className="sm:col-span-2 space-y-3">
                     {items.map((item) => (
                         <div key={item.product.id} className="flex items-center gap-3 bg-white border border-stone-200 rounded-xl p-3">
-                            <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-xl shrink-0">🍞</div>
+                            <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+                                <ProductImage name={item.product.name} className="w-full h-full" />
+                            </div>
                             <div className="flex-1">
                                 <p className="text-sm font-medium">{item.product.name}</p>
                                 <p className="text-xs text-stone-500">{item.quantity} x {formatRupiah(item.product.price)}</p>
