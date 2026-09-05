@@ -1,6 +1,6 @@
 export const PRODUCT_IMAGE_MAP = {
     'Croissant Butter': '/images/produk/croisant butter.jpg',
-    'Sourdough Loaf': '/images/produk/sourdough loaf.jpg',
+    'Sourdough Loaf': '/images/produk/sd loaf.jpg',
     'Red Velvet Cake Slice': '/images/produk/red velvet.jpg',
     'Choco Chip Cookies (isi 6)': '/images/produk/choco chips.jpg',
     'Cinnamon Roll': '/images/produk/cinnamon rol.jpg',
