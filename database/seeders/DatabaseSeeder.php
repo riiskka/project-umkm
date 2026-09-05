@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Red Velvet Cake Slice', 'price' => 32000, 'stock' => 15, 'description' => 'Kue red velvet lembut dengan cream cheese frosting.', 'weight' => 150],
             ['name' => 'Choco Chip Cookies (isi 6)', 'price' => 25000, 'stock' => 30, 'description' => 'Cookies choco chip renyah di luar, lembut di dalam.', 'weight' => 200],
             ['name' => 'Cinnamon Roll', 'price' => 20000, 'stock' => 20, 'description' => 'Roll kayu manis dengan glaze manis di atasnya.', 'weight' => 100],
-            ['name' => 'Baguette', 'price' => 22000, 'stock' => 0, 'description' => 'Baguette klasik ala Prancis, kulit garing.', 'weight' => 250],
+            ['name' => 'Baguette', 'price' => 22000, 'stock' => 15, 'description' => 'Baguette klasik ala Prancis, kulit garing.', 'weight' => 250],
         ];
 
         foreach ($products as $item) {
