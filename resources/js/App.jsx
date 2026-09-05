@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import { CartProvider } from './context/CartContext'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import RequireAuth from './components/RequireAuth'
 
 import Home from './pages/Home'
@@ -20,7 +21,7 @@ function App() {
         <AuthProvider>
             <CartProvider>
                 <BrowserRouter>
-                    <div className="bg-amber-50 text-stone-800 min-h-screen flex flex-col">
+                    <div className="bg-cream-50 text-espresso-900 min-h-screen flex flex-col">
                         <Navbar />
 
                         <main className="flex-1">
@@ -67,11 +68,7 @@ function App() {
                             </div>
                         </main>
 
-                        <footer className="bg-stone-900 text-amber-100/70 text-sm mt-10">
-                            <div className="max-w-6xl mx-auto px-4 py-6 text-center">
-                                &copy; {new Date().getFullYear()} Maison Bake. Dibuat untuk tugas sekolah.
-                            </div>
-                        </footer>
+                        <Footer />
                     </div>
                 </BrowserRouter>
             </CartProvider>
