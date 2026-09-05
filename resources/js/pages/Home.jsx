@@ -67,7 +67,7 @@ export default function Home() {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         placeholder="Cari roti, kue..."
-                        className="w-full rounded-l-full px-4 py-2.5 text-stone-900 text-sm focus:outline-none"
+                        className="w-full rounded-l-full px-4 py-2.5 text-stone-900 text-sm bg-white focus:outline-none"
                     />
                     <button className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-5 rounded-r-full text-sm font-medium transition-colors">
                         Cari
