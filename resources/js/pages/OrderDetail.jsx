@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { api } from '../api'
 import { formatRupiah } from '../components/ProductCard'
+import { getOrderStatus } from '../orderStatus'
 
 export default function OrderDetail() {
     const { id } = useParams()
@@ -13,6 +14,8 @@ export default function OrderDetail() {
 
     if (!order) return <p className="text-stone-500 text-center py-12">Memuat...</p>
 
+    const status = getOrderStatus(order.status)
+
     return (
         <div>
             <Link to="/pesanan-saya" className="text-sm text-stone-500 hover:text-stone-800">&larr; Pesanan Saya</Link>
@@ -22,8 +25,8 @@ export default function OrderDetail() {
                     <h1 className="text-xl font-semibold">Pesanan #{order.id}</h1>
                     <p className="text-xs text-stone-400">{new Date(order.created_at).toLocaleString('id-ID')}</p>
                 </div>
-                <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-700 capitalize">
-                    {order.status}
+                <span className={`text-xs px-2 py-1 rounded-full font-medium ${status.className}`}>
+                    {status.label}
                 </span>
             </div>
 
