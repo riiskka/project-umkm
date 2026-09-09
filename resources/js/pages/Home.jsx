@@ -87,6 +87,36 @@ export default function Home() {
                 ))}
             </div>
 
+            <div className="mb-14 bg-cream-100 rounded-3xl p-6 sm:p-10 grid sm:grid-cols-2 gap-8 items-center">
+                <div className="rounded-2xl overflow-hidden order-2 sm:order-1 shadow-sm">
+                    <img src="/images/produk/tentang-kami.jpg" alt="Toko Maison Bake" className="w-full h-full object-cover" />
+                </div>
+                <div className="order-1 sm:order-2">
+                    <p className="text-terracotta-600 text-sm font-medium uppercase tracking-wide mb-2">Tentang Kami</p>
+                    <h2 className="text-2xl font-semibold text-espresso-900 mb-3">Dari Dapur Kecil, Jadi Toko Favorit Sekitar</h2>
+                    <p className="text-sm text-stone-600 leading-relaxed mb-4">
+                        Maison Bake berawal dari kecintaan pada roti dan kue buatan rumah. Setiap produk kami
+                        dibuat dengan resep sederhana, bahan pilihan, dan dipanggang segar setiap hari —
+                        tanpa pengawet, penuh rasa. Kami percaya kebahagiaan kecil bisa datang dari sepotong
+                        roti hangat yang baru keluar dari oven.
+                    </p>
+                    <div className="flex gap-6">
+                        <div>
+                            <p className="text-xl font-semibold text-espresso-900">3+</p>
+                            <p className="text-xs text-stone-500">Tahun Berkarya</p>
+                        </div>
+                        <div>
+                            <p className="text-xl font-semibold text-espresso-900">6</p>
+                            <p className="text-xs text-stone-500">Menu Andalan</p>
+                        </div>
+                        <div>
+                            <p className="text-xl font-semibold text-espresso-900">100%</p>
+                            <p className="text-xs text-stone-500">Dipanggang Segar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {stores.length > 0 && (
                 <div className="mb-6 flex flex-wrap gap-2 text-sm">
                     <Link
